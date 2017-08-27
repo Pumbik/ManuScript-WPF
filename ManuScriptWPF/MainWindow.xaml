@@ -1,0 +1,41 @@
+﻿<Window x:Name="Main" x:Class="ManuScriptWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ManuScriptWPF"
+        mc:Ignorable="d"
+        Title="ManuScript" Height="350" Width="525" WindowStyle="SingleBorderWindow"  ResizeMode="CanResizeWithGrip" ToolTip="Главное окно"  ForceCursor="False">
+    <Grid VerticalAlignment="Top">
+        <InkCanvas HorizontalAlignment="Stretch" Margin="12,12,12,199" x:Name="InkCanvas1" VerticalAlignment="Stretch" MinHeight="100" EditingMode="Ink" Background="LightYellow" />
+
+        <!--Кнопки-->
+        <Button Name="btnClear" Content="Очистка" Margin="0,117,10,0"  Width="75" Click="btnClear_Click" Height="23" VerticalAlignment="Top" HorizontalAlignment="Right" />
+        <Button x:Name="btnClearEl" Content="Стереть элемент" HorizontalAlignment="Left" Margin="12,117,0,0" VerticalAlignment="Top" Width="106" Click="btnClearEl_Click"/>
+        <Button x:Name="btnDraw" Content="Рисовать" HorizontalAlignment="Left" Margin="132,117,0,0" VerticalAlignment="Top" Width="99" Click="btnDraw_Click"/>
+        <Button x:Name="btnDC" Content="Рисовать со стиранием" HorizontalAlignment="Left" Margin="250,117,0,0" VerticalAlignment="Top" Width="141" Click="btnDC_Click"/>
+        <Button x:Name="btnNotEven" Content="Команды без событий" HorizontalAlignment="Left" Margin="21,283,0,0" VerticalAlignment="Top" Width="144"/>
+
+        <!--Выпадающее -->
+        <Expander x:Name="expander" Header="Выбирете оформление" HorizontalAlignment="Left" Margin="324,174,0,0" VerticalAlignment="Top" ExpandDirection="Up" Width="181" Height="128">
+            <StackPanel VerticalAlignment="Bottom">
+                <RadioButton x:Name="radioButton1" Content="Canvas" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <RadioButton x:Name="radioButton2" Content="StackPanel" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <RadioButton x:Name="radioButton3" Content="WrapPanel" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <RadioButton x:Name="radioButton4" Content="DockPanel" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <RadioButton x:Name="radioButton5" Content="ALL" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="btnExpander" Content="Сменить оформление" HorizontalAlignment="Left" VerticalAlignment="Top" Width="169"/>
+            </StackPanel>
+        </Expander>
+
+    </Grid>
+
+    <!--заливка основного окна-->
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFD08E8E" Offset="0" />
+            <GradientStop Color="#FF881E1E" Offset="0.99" />
+        </LinearGradientBrush>
+    </Window.Background>
+
+</Window>
